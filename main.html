@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Text Transformer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      #input-box, #output-box {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      
+      #input-box {
+        resize: vertical;
+      }
+      
+      #transform-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      #transform-button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="input-box"></textarea>
+    
+    <button id="transform-button">Transform</button>
+    <textarea id="output-box"></textarea>
+    <script>
+      const transformButton = document.getElementById('transform-button');
+      transformButton.addEventListener('click', () => {
+        const inputBox = document.getElementById('input-box');
+        const outputBox = document.getElementById('output-box');
+        const inputText = inputBox.value;
+        
+        // Perform the text transformation
+        const modifiedText = inputText.replace(/utilize/g, 'use');
+        
+        // Display the modified text in the output box
+        outputBox.value = modifiedText;
+      });
+    </script>
+  </body>
+</html>
